@@ -1,7 +1,7 @@
 from PySide6.QtCore import QObject, Signal, Slot, Property
 import json
 from Setting import language_pack, language
-
+from PySide6.QtCore import QPoint
 
 class RiotClientProcess(QObject):
 
@@ -17,7 +17,7 @@ class RiotClientProcess(QObject):
         self._port = 0
         self._token = ""
         self.chatId = 0
-
+        self.window = None
 
     is_aram_selecting_changed = Signal()
     team_champ_select_changed = Signal()
@@ -145,5 +145,12 @@ class RiotClientProcess(QObject):
             buff['other'] = '\n'.join(other_buffs)
             new_buffs[k] = buff
         self.setBuffs(new_buffs)
+
+    @Property(QPoint)
+    def windowsPosition(self):
+        if self.window:
+            return QPoint(*self.window.topleft)
+        return QPoint(0,0)
+        
 
         

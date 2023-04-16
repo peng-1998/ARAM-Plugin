@@ -8,7 +8,7 @@ from PySide6.QtNetwork import QSslCertificate,QSslConfiguration,QNetworkAccessMa
 
 from psutil import process_iter, Process
 import json 
-
+import pyautogui
 from lcu_driver import Connector
 from lcu_driver.connection import Connection
 from RiotClientProcess import RiotClientProcess
@@ -64,6 +64,11 @@ if __name__ == "__main__":
             icon = champion['squarePortraitPath']
             # 保存英雄信息 id 名字 头像
             allChampions[str(id)] = {'name':name,'icon':f"https://riot:{riotclient_process.token}@127.0.0.1:{riotclient_process.port}{icon}"}
+        
+        window = pyautogui.getWindowsWithTitle("League of Legends")[0]
+        riotclient_process.window = window
+        
+        
         riotclient_process.setAllChampions(allChampions)
         async def send_chat():
             while True:
@@ -74,6 +79,10 @@ if __name__ == "__main__":
         await send_chat()
 
 
+    @connector.ws.register('/lol-gameflow/v1/gameflow-phase', event_types=('UPDATE',))
+    async def gameflow_updated(connection, event):
+        if event.data == 'InProgress':
+            riotclient_process.setIs_aram_selecting(False)
 
 
     @connector.ws.register('/lol-champ-select/v1/session', event_types=('UPDATE',))
@@ -99,6 +108,7 @@ if __name__ == "__main__":
         # 当客户端断开连接时，重置所有数据
         riotclient_process.setAllChampions([])
         riotclient_process.setIs_aram_selecting(False)
+        riotclient_process.window = None
         connector.start()
 
     
@@ -106,14 +116,10 @@ if __name__ == "__main__":
         buff = riotclient_process._buffs[championId]
         words = buff["name"]+":"+language_pack[language]["buff_name"]["dmg_dealt"]+\
             buff["dmg_dealt"]+" "+language_pack[language]["buff_name"]["dmg_taken"]+\
-            buff["dmg_taken"]+" "+buff["other"]+"--来自极地大乱斗助手"
+            buff["dmg_taken"]+" "+buff["other"]+"--"+language_pack[language]["from"]
+        words = words.replace("\n","")
         sandlist.append(words)
         
-        
-
-      
-        
-
     riotclient_process.sendBuff.connect(sendBuff)
     # 启动后台线程 即英雄联盟连接器
     backend.start()
