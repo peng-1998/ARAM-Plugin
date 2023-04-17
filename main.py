@@ -1,19 +1,15 @@
 import asyncio
 import sys
-from PySide6.QtGui import QGuiApplication,QIcon,QAction
 from PySide6.QtQml import QQmlApplicationEngine
-from PySide6.QtCore import QObject, Signal, Slot, Property, QUrl, QTimer,QThread
-from PySide6.QtWidgets import QSystemTrayIcon,QMenu,QApplication
-from PySide6.QtNetwork import QSslCertificate,QSslConfiguration,QNetworkAccessManager,QNetworkRequest,QNetworkReply
+from PySide6.QtCore import QUrl,QThread,Qt
+from PySide6.QtWidgets import QSystemTrayIcon,QApplication
+from PySide6.QtNetwork import QSslCertificate,QSslConfiguration
 
-from psutil import process_iter, Process
-import json 
-import pyautogui
 from lcu_driver import Connector
 from lcu_driver.connection import Connection
 from RiotClientProcess import RiotClientProcess
 from SystemTray import SystemTray
-from Setting import language_pack, language
+from Setting import language_pack, languages,setting
 
 class Backend(QThread):
     
@@ -21,17 +17,18 @@ class Backend(QThread):
         super().__init__(parent)
         
     def run(self):
-        connector.start()
+        while True:
+            connector.start()
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setAttribute(Qt.ApplicationAttribute.AA_EnableHighDpiScaling)
 
     pem = QSslCertificate.fromPath('data/riotgames.pem')
     config = QSslConfiguration.defaultConfiguration()
     config.addCaCertificate(pem[0])
     QSslConfiguration.setDefaultConfiguration(config)
-    netmanager = QNetworkAccessManager()
 
     riotclient_process = RiotClientProcess()
     backend=Backend()
@@ -42,6 +39,7 @@ if __name__ == "__main__":
     # 定义连接开始事件
     @connector.ready
     async def init(connection:Connection):
+        print('Connected to LCU.')
         # 获取端口 和 token
         riotclient_process.setPort(connection._port)
         riotclient_process.setToken(connection._auth_key)
@@ -65,10 +63,6 @@ if __name__ == "__main__":
             # 保存英雄信息 id 名字 头像
             allChampions[str(id)] = {'name':name,'icon':f"https://riot:{riotclient_process.token}@127.0.0.1:{riotclient_process.port}{icon}"}
         
-        window = pyautogui.getWindowsWithTitle("League of Legends")[0]
-        riotclient_process.window = window
-        
-        
         riotclient_process.setAllChampions(allChampions)
         async def send_chat():
             while True:
@@ -79,13 +73,14 @@ if __name__ == "__main__":
         await send_chat()
 
 
-    @connector.ws.register('/lol-gameflow/v1/gameflow-phase', event_types=('UPDATE',))
+    @connector.ws.register('/lol-gameflow/v1/gameflow-phase', event_types=('UPDATE','CREATE'))
     async def gameflow_updated(connection, event):
+        print(event.data)
         if event.data == 'InProgress':
             riotclient_process.setIs_aram_selecting(False)
 
 
-    @connector.ws.register('/lol-champ-select/v1/session', event_types=('UPDATE',))
+    @connector.ws.register('/lol-champ-select/v1/session', event_types=('UPDATE','CREATE'))
     async def session_updated(connection, event):
         # 判断是在极地大乱斗选人界面
         riotclient_process.setIs_aram_selecting(event.data['benchEnabled'])
@@ -108,15 +103,15 @@ if __name__ == "__main__":
         # 当客户端断开连接时，重置所有数据
         riotclient_process.setAllChampions([])
         riotclient_process.setIs_aram_selecting(False)
-        riotclient_process.window = None
-        connector.start()
+
+
 
     
     def sendBuff(championId):
         buff = riotclient_process._buffs[championId]
-        words = buff["name"]+":"+language_pack[language]["buff_name"]["dmg_dealt"]+\
-            buff["dmg_dealt"]+" "+language_pack[language]["buff_name"]["dmg_taken"]+\
-            buff["dmg_taken"]+" "+buff["other"]+"--"+language_pack[language]["from"]
+        words = buff["name"]+":"+language_pack[setting.language]["buff_name"]["dmg_dealt"]+\
+            buff["dmg_dealt"]+" "+language_pack[setting.language]["buff_name"]["dmg_taken"]+\
+            buff["dmg_taken"]+" "+buff["other"]+"--"+language_pack[setting.language]["from"]
         words = words.replace("\n","")
         sandlist.append(words)
         
@@ -126,6 +121,7 @@ if __name__ == "__main__":
     # 主要界面
     engine = QQmlApplicationEngine()
     engine.rootContext().setContextProperty("riotclient_process", riotclient_process)
+    engine.rootContext().setContextProperty('setting', setting)
     engine.load(QUrl.fromLocalFile('main.qml'))
 
     def quit():

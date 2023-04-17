@@ -1,7 +1,11 @@
 from PySide6.QtCore import QObject, Signal, Slot, Property
 import json
-from Setting import language_pack, language
+
+import pyautogui
+from Setting import language_pack, setting
 from PySide6.QtCore import QPoint
+import win32gui
+import ctypes
 
 class RiotClientProcess(QObject):
 
@@ -18,6 +22,7 @@ class RiotClientProcess(QObject):
         self._token = ""
         self.chatId = 0
         self.window = None
+        self.dpi = ctypes.windll.user32.GetDpiForSystem()
 
     is_aram_selecting_changed = Signal()
     team_champ_select_changed = Signal()
@@ -137,19 +142,23 @@ class RiotClientProcess(QObject):
             other_buffs = []
             for buff_type in ['tenacity', 'energy_regen', 'healing', 'shielding']:
                 if buff_type in v:
-                    other_buffs.append(f"{language_pack[language]['buff_name'][buff_type]} {RiotClientProcess.format_buff_value(v[buff_type])}")
+                    other_buffs.append(f"{language_pack[setting.language]['buff_name'][buff_type]} {RiotClientProcess.format_buff_value(v[buff_type])}")
             if 'ability_haste' in v:
-                other_buffs.append(f"{language_pack[language]['buff_name']['ability_haste']} {v['ability_haste']}")
+                other_buffs.append(f"{language_pack[setting.language]['buff_name']['ability_haste']} {v['ability_haste']}")
             if 'attack_speed' in v:
-                other_buffs.append(f"{language_pack[language]['buff_name']['attack_speed']} {RiotClientProcess.format_buff_value(v['attack_speed'],1)}")
+                other_buffs.append(f"{language_pack[setting.language]['buff_name']['attack_speed']} {RiotClientProcess.format_buff_value(v['attack_speed'],1)}")
             buff['other'] = '\n'.join(other_buffs)
             new_buffs[k] = buff
         self.setBuffs(new_buffs)
 
     @Property(QPoint)
     def windowsPosition(self):
-        if self.window:
-            return QPoint(*self.window.topleft)
+        windows = pyautogui.getWindowsWithTitle("League of Legends")
+        if len(windows) > 0:
+            left, top = windows[0].left, windows[0].top
+            left = int(left * 96 / self.dpi)
+            top = int(top * 96 / self.dpi)
+            return QPoint(left, top)
         return QPoint(0,0)
         
 

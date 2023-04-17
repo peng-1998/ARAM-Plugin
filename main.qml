@@ -7,7 +7,7 @@ Window {
 
     ListModel{
         id:uiConfig
-        property int current:0
+        property int current:setting.ui_size
         ListElement{
             type: "big"
             width0: 370
@@ -44,8 +44,8 @@ Window {
             width3: 90
             width4: 40
         }
-
     }
+
     property var uiWords:{
         "champion":"英雄",
         "damage_dealt":"伤害",
@@ -54,6 +54,7 @@ Window {
         "send":"发送",
         "otherchampion":"可替换英雄"
     }
+    property string sendText:"发送"
     width: uiConfig.get(uiConfig.current).width0
     height: {
         var lineHeight = uiConfig.get(uiConfig.current).lineHeight
@@ -70,14 +71,19 @@ Window {
     property bool closed : false
     visible: is_aram_selecting && !closed
     // visible: true
+
     onIs_aram_selectingChanged: {
         if (is_aram_selecting)
         {
            closed = false
            updateBanchView()
            updateTeamView()
-           var xy = riotclient_process.windowsPosition()
-            window.x = xy.x-window.width
+           var xy = riotclient_process.windowsPosition
+
+            x = xy.x-window.width
+            if(x<0)
+                x = 0
+            window.x = x
             window.y = xy.y
         }
     }
@@ -220,7 +226,7 @@ Window {
                         Text {
                             id:sendBtnText
                             anchors.centerIn:parent
-                            text:uiWords.send
+                            text:window.sendText
                             color:"white"
                             font.pixelSize:uiConfig.get(uiConfig.current).fontSize1
                         }
@@ -273,6 +279,7 @@ Window {
                 }
 
                 Text {
+                    id:buffHeader3
                     width:parent.width - buffHeader2.width - buffHeader1.width
                     height:parent.height
                     anchors.top:parent.top
@@ -454,11 +461,30 @@ Window {
             updateBanchView()
         }
     }
+    function setUiWords(){
+        var _uiWords = JSON.parse(setting.ui_words)
+        for(var k in window.uiWords){
+            window.uiWords[k] = _uiWords[k]
+        }
+        sendText = uiWords.send
+        buffHeader1.text = uiWords.champion
+        buffHeader2.text = uiWords.damage_dealt+"/"+uiWords.damage_taken
+        buffHeader3.text = uiWords.other
+        benchHeader.text = uiWords.otherchampion
+    }
+    Connections{
+        target:setting 
+        function onLanguage_changed(){
+            setUiWords()
+        }
+    }
+
     Component.onCompleted: {
         window.buffs = JSON.parse(riotclient_process.buffs)
         window.team_champ_select = JSON.parse(riotclient_process.team_champ_select)
         window.bench_champ_select = JSON.parse(riotclient_process.bench_champ_select)
         updateTeamView()
         updateBanchView()
+        setUiWords()
     }
 }
