@@ -1,0 +1,3 @@
+lcu_driver==3.0.0
+PyAutoGUI==0.9.53
+PySide6==6.5.0

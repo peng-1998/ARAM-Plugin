@@ -396,6 +396,7 @@ Window {
             em.name = window.buffs[window.team_champ_select[i]].name
         }
     }
+    
     function updateBanchView() {
         if(!window.is_aram_selecting){
             return
@@ -430,18 +431,6 @@ Window {
                 em.name = window.buffs[window.bench_champ_select[i]].name
             }
         }
-        // benchModel.clear()
-        // for(var i = 0; i < window.bench_champ_select.length; i++)
-        // {
-        //     benchModel.append({
-        //                           dmg_dealt:window.buffs[window.bench_champ_select[i]].dmg_dealt,
-        //                           dmg_taken:window.buffs[window.bench_champ_select[i]].dmg_taken,
-        //                           other:window.buffs[window.bench_champ_select[i]].other,
-        //                           img_source:window.buffs[window.bench_champ_select[i]].icon,
-        //                           championId:window.bench_champ_select[i],
-        //                           name:window.buffs[window.bench_champ_select[i]].name
-        //                       })
-        // }
     }
     
     
