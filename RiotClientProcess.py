@@ -1,5 +1,7 @@
 import ctypes  # 引入 ctypes 库，用于调用 Windows API
 import json  # 引入 json 库，用于处理 JSON 格式的数据
+import os  # 引入 os 库，用于获取当前系统的信息
+import requests  # 引入 requests 库，用于发送 HTTP 请求
 
 import pyautogui  # 引入 pyautogui 库，用于获取英雄联盟客户端的窗口位置
 from PySide6.QtCore import Property, QObject, QPoint, Signal  # 引入 PySide6 库，用于创建 GUI 应用
@@ -24,6 +26,7 @@ class RiotClientProcess(QObject):
         self._token = ""  # 令牌
         self.chatId = 0  # 聊天 ID
         self.dpi = ctypes.windll.user32.GetDpiForSystem()  # 获取系统 DPI
+        self._version = ""
 
     is_aram_selecting_changed = Signal()  # 是否正在选择英雄发生变化的信号
     team_champ_select_changed = Signal()  # 队伍选择的英雄发生变化的信号
@@ -114,24 +117,16 @@ class RiotClientProcess(QObject):
         return f"{sign}{abs_diff:.{decimal_places}f}%"
 
     def getBuffData(self) -> None:
-        buffs = {}
-        with open('data/data.lua', 'r', encoding='utf-8') as f:
-            while f.readable():
-                line = f.readline()
-                if len(line) < 3:
-                    break
-                if '["id"]' in line:
-                    id = line.split('=')[1][:-2].strip()
-                    buffs[id] = {}
-                if '["aram"]' in line:
-                    in_aram = True
-                    while in_aram:
-                        line = f.readline()
-                        if '},' in line:
-                            in_aram = False
-                        else:
-                            line = line[:-1].replace(' ', '').split('=')
-                            buffs[id][line[0].replace('"', '').replace('[', '').replace(']', '')] = line[1].replace(',', '')
+        if os.path.exists('data/buffs.json'):
+            buffs = json.load(open('data/buffs.json', 'r', encoding='utf-8'))
+            self._version = buffs['version']
+            del buffs['version']
+        else:
+            buffs = self.downloadData()
+            del buffs['version']
+        self.setBuffs(self.formatBuffs(buffs))
+    
+    def formatBuffs(self, buffs) -> str:
         new_buffs = {k: v for k, v in buffs.items() if k.isdigit()}
         for buff in new_buffs.values(): # 格式化buff数据
             buff['dmg_dealt'] = RiotClientProcess.format_buff_value(buff['dmg_dealt']) if 'dmg_dealt' in buff else "100%"
@@ -145,8 +140,60 @@ class RiotClientProcess(QObject):
             if 'attack_speed' in buff:  # 特殊处理 攻速 因为需要保留一位小数
                 other_buffs.append(f"{language_pack[setting.language]['buff_name']['attack_speed']} {RiotClientProcess.format_buff_value(buff['attack_speed'],1)}")
             buff['other'] = '\n'.join(other_buffs)
-        self.setBuffs(new_buffs)
+        return new_buffs
+    
+    def downloadData(self):
+        try:
+            respose = requests.get("https://leagueoflegends.fandom.com/wiki/Module:ChampionData/data").text
+            lines = respose.splitlines()
+            start = False
+            buffs = {}
+            in_aram = False
+            for line in lines:
+                if line == "return {":
+                    start=True
+                if "-- &lt;/pre&gt;" in line:
+                    break
+                if start:
+                    if '[&quot;id&quot;]' in line:
+                        id = line.split('=')[1][:-1].strip()
+                        buffs[id] = {}
+                    if '[&quot;aram&quot;]' in line:
+                        in_aram = True
+                    if '},' in line:
+                        in_aram = False
+                    if in_aram:
+                        lineList = line.split('=')
+                        buffname = lineList[0].replace('[&quot;', '').replace('&quot;]', '').replace(' ', '')
+                        buffvalue = lineList[1].replace(',', '').replace(' ', '')
+                        buffs[id][buffname] = buffvalue
 
+            buffs = {k: v for k, v in buffs.items() if k.isdigit()}
+
+            respose = requests.get("https://leagueoflegends.fandom.com/wiki/Patch_(League_of_Legends)").text
+            lines = respose.splitlines()
+            index = lines.index('<th style="width:33%">Current Patch:')
+            # <td><a href="/wiki/V13.7" title="V13.7">13.7</a>
+            version = lines[index+5].split('">')[1].split('<')[0]
+
+            buffs['version'] = version
+            with open('data/buffs.json', 'w', encoding='utf-8') as f:
+                json.dump(buffs, f, indent=4, ensure_ascii=False)
+            return buffs
+        except Exception as e:
+            print(e)
+            return None
+
+    def update(self):
+        buffs = self.downloadData()
+        if buffs:
+            buffs = self.formatBuffs(buffs)
+            for key in buffs:
+                if key in self._buffs:
+                    for buff in buffs[key]:
+                        self._buffs[key][buff] = buffs[key][buff]
+            self.buffs_changed.emit()
+        
     @Property(QPoint)
     def windowsPosition(self) -> QPoint:
         windows = pyautogui.getWindowsWithTitle("League of Legends") # 获取窗口

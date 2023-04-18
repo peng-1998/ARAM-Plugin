@@ -1,1 +1,727 @@
-{"266": {"dmg_dealt": "1", "dmg_taken": "0.9", "tenacity": "1.2"}, "103": {}, "84": {"dmg_dealt": "1.1", "dmg_taken": "0.85", "energy_regen": "1.2", "tenacity": "1.2"}, "166": {"dmg_dealt": "1.05", "dmg_taken": "0.95"}, "12": {"dmg_dealt": "0.95", "dmg_taken": "1.1", "healing": "0.8"}, "32": {"dmg_taken": "1.05"}, "34": {}, "1": {"dmg_dealt": "0.95", "dmg_taken": "1.05", "shielding": "0.8"}, "523": {"dmg_dealt": "1"}, "22": {"ability_haste": "-20", "attack_speed": "1.025", "dmg_dealt": "0.85", "dmg_taken": "1.15"}, "136": {}, "268": {"ability_haste": "20", "attack_speed": "1.025", "dmg_dealt": "1.05", "dmg_taken": "0.95"}, "432": {"dmg_dealt": "1.15", "dmg_taken": "0.8", "healing": "1.2"}, "200": {"dmg_dealt": "1", "dmg_taken": "1"}, "53": {}, "63": {"dmg_dealt": "0.95", "dmg_taken": "1.1"}, "201": {}, "51": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "164": {"dmg_dealt": "1.05", "dmg_taken": "0.95", "healing": "1.2", "shielding": "1.1"}, "69": {}, "31": {}, "42": {"dmg_taken": "0.95"}, "122": {"dmg_taken": "1"}, "131": {"dmg_taken": "1"}, "36": {"dmg_dealt": "0.9", "dmg_taken": "1.1", "healing": "0.9"}, "119": {"dmg_dealt": "1.05", "dmg_taken": "0.95"}, "245": {"dmg_dealt": "1.1", "dmg_taken": "1", "tenacity": "1.2"}, "60": {"dmg_dealt": "1.05", "dmg_taken": "0.9", "tenacity": "1.2"}, "28": {"dmg_dealt": "1.15", "dmg_taken": "0.85", "tenacity": "1.2"}, "81": {"dmg_dealt": "0.95", "dmg_taken": "1.03"}, "9": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "114": {"dmg_taken": "0.95"}, "105": {"dmg_dealt": "1.05", "dmg_taken": "0.95", "tenacity": "1.2"}, "3": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "41": {}, "86": {"dmg_taken": "0.95"}, "150": {"dmg_taken": "0.95"}, "79": {"dmg_taken": "0.95"}, "104": {}, "887": {"dmg_dealt": "1.05"}, "120": {"dmg_dealt": "1.05", "dmg_taken": "0.95", "healing": "1.2"}, "74": {"dmg_dealt": "0.9", "dmg_taken": "1.1"}, "420": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "39": {"dmg_dealt": "1", "dmg_taken": "1"}, "427": {"dmg_dealt": "0.95"}, "40": {"dmg_dealt": "0.95", "dmg_taken": "1.05", "healing": "0.90"}, "59": {"dmg_dealt": "1", "dmg_taken": "0.95"}, "24": {"dmg_taken": "0.97"}, "126": {}, "202": {"dmg_dealt": "0.9"}, "222": {"dmg_dealt": "0.9", "dmg_taken": "1.05"}, "145": {"attack_speed": "1.025", "dmg_dealt": "1", "dmg_taken": "0.95"}, "429": {"attack_speed": "1.025", "dmg_dealt": "1.1", "dmg_taken": "0.9"}, "43": {}, "30": {"dmg_dealt": "0.9", "dmg_taken": "1.05"}, "38": {"dmg_dealt": "1", "dmg_taken": "1"}, "55": {"ability_haste": "10", "dmg_dealt": "1", "dmg_taken": "1", "tenacity": "1.2"}, "10": {"dmg_dealt": "0.95", "dmg_taken": "1.03"}, "141": {"dmg_dealt": "1.05", "healing": "0.8", "tenacity": "1.2"}, "85": {"dmg_taken": "0.95", "energy_regen": "1.2"}, "121": {"dmg_dealt": "1.05", "dmg_taken": "0.9", "healing": "1.2", "tenacity": "1.2"}, "203": {"dmg_dealt": "1.1", "dmg_taken": "0.9"}, "240": {"dmg_dealt": "1", "dmg_taken": "1"}, "96": {"dmg_dealt": "0.88", "dmg_taken": "1.1"}, "897": {"dmg_dealt": "1", "dmg_taken": "0.9"}, "7": {"ability_haste": "20", "dmg_dealt": "1.1", "dmg_taken": "0.9", "tenacity": "1.2"}, "64": {"dmg_dealt": "1.05", "dmg_taken": "0.95", "healing": "1.2", "shielding": "1.2", "energy_regen": "1.2"}, "89": {"dmg_dealt": "0.9", "dmg_taken": "1.05"}, "876": {"dmg_dealt": "0.9"}, "127": {"dmg_dealt": "0.95"}, "236": {"dmg_dealt": "1.05", "dmg_taken": "0.95", "tenacity": "1.2"}, "117": {"dmg_dealt": "1.05", "shielding": "1.1"}, "99": {"dmg_dealt": "0.85", "dmg_taken": "1.1", "shielding": "0.8"}, "54": {}, "90": {"dmg_dealt": "0.92", "dmg_taken": "1.08"}, "57": {"dmg_dealt": "0.8", "dmg_taken": "1.05", "healing": "0.8"}, "11": {"dmg_dealt": "1", "dmg_taken": "0.97"}, "902": {}, "21": {"dmg_dealt": "0.9", "dmg_taken": "1.15"}, "82": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "25": {"dmg_dealt": "0.94", "dmg_taken": "1.05"}, "267": {"dmg_taken": "1.05", "healing": "0.95"}, "75": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "111": {"dmg_dealt": "0.95", "dmg_taken": "1.08"}, "518": {}, "76": {"dmg_dealt": "1.1"}, "895": {"dmg_dealt": "0.95", "healing": "0.9"}, "56": {"dmg_dealt": "1.1", "dmg_taken": "0.85", "healing": "1.2"}, "20": {"dmg_dealt": "1.1", "dmg_taken": "0.9", "healing": "1.2", "shielding": "1.2", "tenacity": "1.2"}, "2": {"dmg_dealt": "0.95"}, "61": {}, "516": {"dmg_dealt": "0.9", "dmg_taken": "1.05"}, "80": {}, "78": {}, "555": {"dmg_dealt": "1.1", "dmg_taken": "0.85", "tenacity": "1.2"}, "246": {"dmg_dealt": "1.15", "dmg_taken": "0.8", "tenacity": "1.2"}, "133": {"dmg_dealt": "1.1", "dmg_taken": "0.9"}, "497": {}, "33": {"dmg_dealt": "1", "dmg_taken": "1"}, "421": {"dmg_dealt": "1", "dmg_taken": "0.85", "healing": "1.2", "tenacity": "1.2"}, "526": {"dmg_dealt": "0.95", "dmg_taken": "1.05", "healing": "0.9", "shielding": "0.9"}, "888": {"dmg_dealt": "0.95", "dmg_taken": "1.05", "shielding": "0.8"}, "58": {"dmg_dealt": "1.05", "healing": "1.2"}, "107": {"dmg_dealt": "1", "dmg_taken": "0.92", "tenacity": "1.2"}, "92": {"dmg_dealt": "1.05", "dmg_taken": "0.92", "shielding": "1.2"}, "68": {"dmg_dealt": "1.05", "dmg_taken": "0.95"}, "13": {"dmg_dealt": "1.05", "dmg_taken": "0.9"}, "360": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "113": {"dmg_dealt": "1.05", "dmg_taken": "0.92"}, "235": {"dmg_dealt": "0.94", "dmg_taken": "1.05"}, "147": {"ability_haste": "-20", "dmg_dealt": "0.85", "dmg_taken": "1.2", "healing": "0.8", "shielding": "0.8"}, "875": {"ability_haste": "-20", "dmg_dealt": "0.9", "dmg_taken": "1.1", "healing": "0.9", "shielding": "0.9"}, "35": {"dmg_dealt": "1.05"}, "98": {}, "102": {"dmg_dealt": "0.95", "dmg_taken": "0.95"}, "27": {"dmg_dealt": "0.9", "dmg_taken": "1.05"}, "14": {"ability_haste": "-20", "dmg_dealt": "0.9", "dmg_taken": "1.1", "shielding": "0.8", "tenacity": "0.8"}, "15": {"dmg_dealt": "0.85", "dmg_taken": "1.05"}, "72": {}, "37": {"ability_haste": "-20", "dmg_dealt": "0.95", "dmg_taken": "1.1", "healing": "0.9", "shielding": "0.9"}, "16": {}, "50": {"dmg_dealt": "0.9", "dmg_taken": "1.15", "healing": "0.9"}, "517": {"dmg_dealt": "1.05", "dmg_taken": "0.95"}, "134": {"dmg_dealt": "1.05"}, "223": {"dmg_taken": "0.95"}, "163": {"dmg_dealt": "1.05"}, "91": {"dmg_dealt": "1.05", "dmg_taken": "0.95", "tenacity": "1.2"}, "44": {"dmg_taken": "1.05"}, "17": {"ability_haste": "-20", "dmg_dealt": "0.9", "dmg_taken": "1.1"}, "412": {}, "18": {}, "48": {"dmg_taken": "1.05", "healing": "0.95"}, "23": {"dmg_dealt": "1.15", "dmg_taken": "0.85", "healing": "1.4"}, "4": {}, "29": {}, "77": {"dmg_dealt": "1", "tenacity": "1.2"}, "6": {"dmg_taken": "1.1"}, "110": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "67": {"dmg_taken": "0.95"}, "45": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "161": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "711": {}, "254": {"dmg_dealt": "1.05", "dmg_taken": "0.95"}, "234": {"dmg_dealt": "1.05", "dmg_taken": "0.95"}, "112": {"dmg_dealt": "0.95", "dmg_taken": "1.05"}, "8": {}, "106": {}, "19": {"dmg_dealt": "1.05", "dmg_taken": "0.95"}, "62": {}, "498": {}, "101": {"dmg_dealt": "0.9", "dmg_taken": "1"}, "5": {}, "157": {}, "777": {"dmg_dealt": "1.03", "dmg_taken": "0.97"}, "83": {}, "350": {"dmg_dealt": "1.05", "healing": "1.1"}, "154": {"dmg_taken": "0.96", "healing": "1.2"}, "238": {"dmg_dealt": "1", "dmg_taken": "0.9", "energy_regen": "1.2", "tenacity": "1.2"}, "221": {"dmg_dealt": "1.1", "dmg_taken": "0.95"}, "115": {"ability_haste": "-20", "dmg_dealt": "0.8", "dmg_taken": "1.2"}, "26": {"dmg_dealt": "1.05"}, "142": {"dmg_dealt": "1.1", "dmg_taken": "0.95"}, "143": {"dmg_dealt": "0.9", "dmg_taken": "1.05"}}
+{
+    "266": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "0.9",
+        "tenacity": "1.2"
+    },
+    "103": {},
+    "84": {
+        "aram": "{",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "0.85",
+        "energy_regen": "1.2",
+        "tenacity": "1.2"
+    },
+    "166": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95"
+    },
+    "12": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.1",
+        "healing": "0.8"
+    },
+    "32": {
+        "aram": "{",
+        "dmg_taken": "1.05"
+    },
+    "34": {},
+    "1": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05",
+        "shielding": "0.8"
+    },
+    "523": {
+        "aram": "{",
+        "dmg_dealt": "1"
+    },
+    "22": {
+        "aram": "{",
+        "ability_haste": "-20",
+        "attack_speed": "1.025",
+        "dmg_dealt": "0.85",
+        "dmg_taken": "1.15"
+    },
+    "136": {},
+    "268": {
+        "aram": "{",
+        "ability_haste": "20",
+        "attack_speed": "1.025",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95"
+    },
+    "432": {
+        "aram": "{",
+        "dmg_dealt": "1.15",
+        "dmg_taken": "0.8",
+        "healing": "1.2"
+    },
+    "200": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "1"
+    },
+    "53": {},
+    "63": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.1"
+    },
+    "201": {},
+    "51": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "164": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95",
+        "healing": "1.2",
+        "shielding": "1.1"
+    },
+    "69": {},
+    "31": {},
+    "42": {
+        "aram": "{",
+        "dmg_taken": "0.95"
+    },
+    "122": {
+        "aram": "{",
+        "dmg_taken": "1"
+    },
+    "131": {
+        "aram": "{",
+        "dmg_taken": "1"
+    },
+    "36": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.1",
+        "healing": "0.9"
+    },
+    "119": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95"
+    },
+    "245": {
+        "aram": "{",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "1",
+        "tenacity": "1.2"
+    },
+    "60": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.9",
+        "tenacity": "1.2"
+    },
+    "28": {
+        "aram": "{",
+        "dmg_dealt": "1.15",
+        "dmg_taken": "0.85",
+        "tenacity": "1.2"
+    },
+    "81": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.03"
+    },
+    "9": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "114": {
+        "aram": "{",
+        "dmg_taken": "0.95"
+    },
+    "105": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95",
+        "tenacity": "1.2"
+    },
+    "3": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "41": {},
+    "86": {
+        "aram": "{",
+        "dmg_taken": "0.95"
+    },
+    "150": {
+        "aram": "{",
+        "dmg_taken": "0.95"
+    },
+    "79": {
+        "aram": "{",
+        "dmg_taken": "0.95"
+    },
+    "104": {},
+    "887": {
+        "aram": "{",
+        "dmg_dealt": "1.05"
+    },
+    "120": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95",
+        "healing": "1.2"
+    },
+    "74": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.1"
+    },
+    "420": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "39": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "1"
+    },
+    "427": {
+        "aram": "{",
+        "dmg_dealt": "0.95"
+    },
+    "40": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05",
+        "healing": "0.90"
+    },
+    "59": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "0.95"
+    },
+    "24": {
+        "aram": "{",
+        "dmg_taken": "0.97"
+    },
+    "126": {},
+    "202": {
+        "aram": "{",
+        "dmg_dealt": "0.9"
+    },
+    "222": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.05"
+    },
+    "145": {
+        "aram": "{",
+        "attack_speed": "1.025",
+        "dmg_dealt": "1",
+        "dmg_taken": "0.95"
+    },
+    "429": {
+        "aram": "{",
+        "attack_speed": "1.025",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "0.9"
+    },
+    "43": {},
+    "30": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.05"
+    },
+    "38": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "1"
+    },
+    "55": {
+        "aram": "{",
+        "ability_haste": "10",
+        "dmg_dealt": "1",
+        "dmg_taken": "1",
+        "tenacity": "1.2"
+    },
+    "10": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.03"
+    },
+    "141": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "healing": "0.8",
+        "tenacity": "1.2"
+    },
+    "85": {
+        "aram": "{",
+        "dmg_taken": "0.95",
+        "energy_regen": "1.2"
+    },
+    "121": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.9",
+        "healing": "1.2",
+        "tenacity": "1.2"
+    },
+    "203": {
+        "aram": "{",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "0.9"
+    },
+    "240": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "1"
+    },
+    "96": {
+        "aram": "{",
+        "dmg_dealt": "0.88",
+        "dmg_taken": "1.1"
+    },
+    "897": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "0.9"
+    },
+    "7": {
+        "aram": "{",
+        "ability_haste": "20",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "0.9",
+        "tenacity": "1.2"
+    },
+    "64": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95",
+        "healing": "1.2",
+        "shielding": "1.2",
+        "energy_regen": "1.2"
+    },
+    "89": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.05"
+    },
+    "876": {
+        "aram": "{",
+        "dmg_dealt": "0.9"
+    },
+    "127": {
+        "aram": "{",
+        "dmg_dealt": "0.95"
+    },
+    "236": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95",
+        "tenacity": "1.2"
+    },
+    "117": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "shielding": "1.1"
+    },
+    "99": {
+        "aram": "{",
+        "dmg_dealt": "0.85",
+        "dmg_taken": "1.1",
+        "shielding": "0.8"
+    },
+    "54": {},
+    "90": {
+        "aram": "{",
+        "dmg_dealt": "0.92",
+        "dmg_taken": "1.08"
+    },
+    "57": {
+        "aram": "{",
+        "dmg_dealt": "0.8",
+        "dmg_taken": "1.05",
+        "healing": "0.8"
+    },
+    "11": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "0.97"
+    },
+    "902": {},
+    "21": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.15"
+    },
+    "82": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "25": {
+        "aram": "{",
+        "dmg_dealt": "0.94",
+        "dmg_taken": "1.05"
+    },
+    "267": {
+        "aram": "{",
+        "dmg_taken": "1.05",
+        "healing": "0.95"
+    },
+    "75": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "111": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.08"
+    },
+    "518": {},
+    "76": {
+        "aram": "{",
+        "dmg_dealt": "1.1"
+    },
+    "895": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "healing": "0.9"
+    },
+    "56": {
+        "aram": "{",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "0.85",
+        "healing": "1.2"
+    },
+    "20": {
+        "aram": "{",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "0.9",
+        "healing": "1.2",
+        "shielding": "1.2",
+        "tenacity": "1.2"
+    },
+    "2": {
+        "aram": "{",
+        "dmg_dealt": "0.95"
+    },
+    "61": {},
+    "516": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.05"
+    },
+    "80": {},
+    "78": {},
+    "555": {
+        "aram": "{",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "0.85",
+        "tenacity": "1.2"
+    },
+    "246": {
+        "aram": "{",
+        "dmg_dealt": "1.15",
+        "dmg_taken": "0.8",
+        "tenacity": "1.2"
+    },
+    "133": {
+        "aram": "{",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "0.9"
+    },
+    "497": {},
+    "33": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "1"
+    },
+    "421": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "0.85",
+        "healing": "1.2",
+        "tenacity": "1.2"
+    },
+    "526": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05",
+        "healing": "0.9",
+        "shielding": "0.9"
+    },
+    "888": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05",
+        "shielding": "0.8"
+    },
+    "58": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "healing": "1.2"
+    },
+    "107": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "0.92",
+        "tenacity": "1.2"
+    },
+    "92": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.92",
+        "shielding": "1.2"
+    },
+    "68": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95"
+    },
+    "13": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.9"
+    },
+    "360": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "113": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.92"
+    },
+    "235": {
+        "aram": "{",
+        "dmg_dealt": "0.94",
+        "dmg_taken": "1.05"
+    },
+    "147": {
+        "aram": "{",
+        "ability_haste": "-20",
+        "dmg_dealt": "0.85",
+        "dmg_taken": "1.2",
+        "healing": "0.8",
+        "shielding": "0.8"
+    },
+    "875": {
+        "aram": "{",
+        "ability_haste": "-20",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.1",
+        "healing": "0.9",
+        "shielding": "0.9"
+    },
+    "35": {
+        "aram": "{",
+        "dmg_dealt": "1.05"
+    },
+    "98": {},
+    "102": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "0.95"
+    },
+    "27": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.05"
+    },
+    "14": {
+        "aram": "{",
+        "ability_haste": "-20",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.1",
+        "shielding": "0.8",
+        "tenacity": "0.8"
+    },
+    "15": {
+        "aram": "{",
+        "dmg_dealt": "0.85",
+        "dmg_taken": "1.05"
+    },
+    "72": {},
+    "37": {
+        "aram": "{",
+        "ability_haste": "-20",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.1",
+        "healing": "0.9",
+        "shielding": "0.9"
+    },
+    "16": {},
+    "50": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.15",
+        "healing": "0.9"
+    },
+    "517": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95"
+    },
+    "134": {
+        "aram": "{",
+        "dmg_dealt": "1.05"
+    },
+    "223": {
+        "aram": "{",
+        "dmg_taken": "0.95"
+    },
+    "163": {
+        "aram": "{",
+        "dmg_dealt": "1.05"
+    },
+    "91": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95",
+        "tenacity": "1.2"
+    },
+    "44": {
+        "aram": "{",
+        "dmg_taken": "1.05"
+    },
+    "17": {
+        "aram": "{",
+        "ability_haste": "-20",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.1"
+    },
+    "412": {},
+    "18": {},
+    "48": {
+        "aram": "{",
+        "dmg_taken": "1.05",
+        "healing": "0.95"
+    },
+    "23": {
+        "aram": "{",
+        "dmg_dealt": "1.15",
+        "dmg_taken": "0.85",
+        "healing": "1.4"
+    },
+    "4": {},
+    "29": {},
+    "77": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "tenacity": "1.2"
+    },
+    "6": {
+        "aram": "{",
+        "dmg_taken": "1.1"
+    },
+    "110": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "67": {
+        "aram": "{",
+        "dmg_taken": "0.95"
+    },
+    "45": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "161": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "711": {},
+    "254": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95"
+    },
+    "234": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95"
+    },
+    "112": {
+        "aram": "{",
+        "dmg_dealt": "0.95",
+        "dmg_taken": "1.05"
+    },
+    "8": {},
+    "106": {},
+    "19": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "dmg_taken": "0.95"
+    },
+    "62": {},
+    "498": {},
+    "101": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1"
+    },
+    "5": {},
+    "157": {},
+    "777": {
+        "aram": "{",
+        "dmg_dealt": "1.03",
+        "dmg_taken": "0.97"
+    },
+    "83": {},
+    "350": {
+        "aram": "{",
+        "dmg_dealt": "1.05",
+        "healing": "1.1"
+    },
+    "154": {
+        "aram": "{",
+        "dmg_taken": "0.96",
+        "healing": "1.2"
+    },
+    "238": {
+        "aram": "{",
+        "dmg_dealt": "1",
+        "dmg_taken": "0.9",
+        "energy_regen": "1.2",
+        "tenacity": "1.2"
+    },
+    "221": {
+        "aram": "{",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "0.95"
+    },
+    "115": {
+        "aram": "{",
+        "ability_haste": "-20",
+        "dmg_dealt": "0.8",
+        "dmg_taken": "1.2"
+    },
+    "26": {
+        "aram": "{",
+        "dmg_dealt": "1.05"
+    },
+    "142": {
+        "aram": "{",
+        "dmg_dealt": "1.1",
+        "dmg_taken": "0.95"
+    },
+    "143": {
+        "aram": "{",
+        "dmg_dealt": "0.9",
+        "dmg_taken": "1.05"
+    },
+    "version": "13.7"
+}

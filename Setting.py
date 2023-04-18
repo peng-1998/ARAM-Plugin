@@ -29,6 +29,7 @@ language_pack = {
             "ui_size_small": "小",
             "ui_size_middle": "中",
             "ui_size_large": "大",
+            "update": "更新数据",
         },
         'from': "来自极地大乱斗助手",
         'show': "简体中文"
@@ -58,6 +59,7 @@ language_pack = {
             "ui_size_small": "Small",
             "ui_size_middle": "Middle",
             "ui_size_large": "Large",
+            "update": "Update Data",
         },
         'from': "From ARAM Helper",
         'show': "English"
@@ -87,6 +89,7 @@ language_pack = {
             "ui_size_small": "小",
             "ui_size_middle": "中",
             "ui_size_large": "大",
+            "update": "更新數據",
         },
         'from': "來自隨機單中助手",
         'show': "繁體中文"

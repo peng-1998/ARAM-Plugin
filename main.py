@@ -1,70 +1,72 @@
 import asyncio
 import sys
-from PySide6.QtQml import QQmlApplicationEngine
-from PySide6.QtCore import QUrl, QThread, Qt
-from PySide6.QtWidgets import QSystemTrayIcon, QApplication
-from PySide6.QtNetwork import QSslCertificate, QSslConfiguration
+from ast import List
 
 from lcu_driver import Connector
 from lcu_driver.connection import Connection
+from PySide6.QtCore import Qt, QThread, QUrl
+from PySide6.QtNetwork import QSslCertificate, QSslConfiguration
+from PySide6.QtQml import QQmlApplicationEngine
+from PySide6.QtWidgets import QApplication, QSystemTrayIcon, QMessageBox
+
 from RiotClientProcess import RiotClientProcess
-from SystemTray import SystemTray
 from Setting import language_pack, setting
+from SystemTray import SystemTray
 
 
 class Backend(QThread):
 
-    def __init__(self, parent=None):
-        super().__init__(parent)
+    def __init__(self) -> None:
+        super().__init__()
 
-    def run(self):
-        # while True:
+    def run(self) -> None:
         connector.start()
 
 
+# 发送Buff信息
 def sendBuff(championId):
-    buff = riotclient_process._buffs[championId]
-    words = f"{buff['name']}:{language_pack[setting.language]['buff_name']['dmg_dealt']}{buff['dmg_dealt']} {language_pack[setting.language]['buff_name']['dmg_taken']}{buff['dmg_taken']} {buff['other']}--{language_pack[setting.language]['from']}"
-    words = words.replace("\n", "")
+    buff: str = riotclient_process._buffs[championId]
+    words: str = f"{buff['name']}:{language_pack[setting.language]['buff_name']['dmg_dealt']}{buff['dmg_dealt']} {language_pack[setting.language]['buff_name']['dmg_taken']}{buff['dmg_taken']} {buff['other']}--{language_pack[setting.language]['from']}"
+    words: str = words.replace("\n", " ")
     sandlist.append(words)
 
 
+# 退出程序
 def quit():
     backend.terminate()
     app.quit()
 
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
+    app: QApplication = QApplication(sys.argv)
     app.setAttribute(Qt.ApplicationAttribute.AA_EnableHighDpiScaling)
 
-    pem = QSslCertificate.fromPath('data/riotgames.pem')
-    config = QSslConfiguration.defaultConfiguration()
+    pem: List = QSslCertificate.fromPath('data/riotgames.pem')
+    config: QSslConfiguration = QSslConfiguration.defaultConfiguration()
     config.addCaCertificate(pem[0])
     QSslConfiguration.setDefaultConfiguration(config)
 
-    riotclient_process = RiotClientProcess()
-    backend = Backend()
+    riotclient_process: RiotClientProcess = RiotClientProcess()
+    backend: Backend = Backend()
 
     # 定义英雄联盟连接器
-    connector = Connector()
+    connector: Connector = Connector()
     sandlist = []
     # 定义连接开始事件
     @connector.ready
     async def init(connection: Connection):
-        print('Connected to LCU.')
         # 获取端口 和 token
         riotclient_process.setPort(connection._port)
         riotclient_process.setToken(connection._auth_key)
 
         # 获取当前游戏用户信息
         summoner = await connection.request('get', '/lol-summoner/v1/current-summoner')
-        summoner = await summoner.json()
+        summoner: dict = await summoner.json()
         # 设置summonerId
-        riotclient_process._summonerId = summoner['summonerId']
+        riotclient_process._summonerId: int = summoner['summonerId']
         # 获取所有英雄信息
         Champions = await connection.request('get', f'/lol-champions/v1/inventories/{riotclient_process._summonerId}/champions')
-        Champions = await Champions.json()
+        Champions: List = await Champions.json()
         allChampions = {str(champion['id']): {'name': champion['name'], 'icon': f"https://riot:{riotclient_process.token}@127.0.0.1:{riotclient_process.port}{champion['squarePortraitPath']}"} for champion in Champions if champion['id'] != -1}
 
         riotclient_process.setAllChampions(allChampions)
@@ -90,14 +92,14 @@ if __name__ == "__main__":
 
         if event.data.get('benchEnabled', False):
             # 顶部可选英雄
-            benchChampions = event.data['benchChampions']
+            benchChampions: list = event.data['benchChampions']
             # 队伍当前选择的英雄
-            myTeam = event.data['myTeam']
-            benchChampions = [champion['championId'] for champion in benchChampions]
-            teamChampions = [champion['championId'] for champion in myTeam]
+            myTeam: list = event.data['myTeam']
+            benchChampions: list = [champion['championId'] for champion in benchChampions]
+            teamChampions: list = [champion['championId'] for champion in myTeam]
             riotclient_process.setTeam_champ_select(teamChampions)
             riotclient_process.setBench_champ_select(benchChampions)
-        chatId = event.data['chatDetails']['multiUserChatId']
+        chatId: str = event.data['chatDetails']['multiUserChatId']
         riotclient_process.setChatId(chatId)
 
     @connector.close
@@ -116,10 +118,19 @@ if __name__ == "__main__":
 
     # SystemTrayIcon
     if not QSystemTrayIcon.isSystemTrayAvailable():
-        print('I couldn\'t detect any system tray on this system.')
+        msgBox = QMessageBox()
+        msgBox.setIcon(QMessageBox.Warning)
+        msgBox.setText("error")
+        msgBox.setInformativeText("Couldn't detect any system tray on this system.")
+        msgBox.setWindowTitle("error")
+        msgBox.setStandardButtons(QMessageBox.StandardButton.Ok)
+        msgBox.setIcon(QMessageBox.Icon.Warning)
+        msgBox.exec_()
+        sys.exit(1)
     else:
         trayIcon = SystemTray()
         trayIcon.quit_signal.connect(quit)
+        trayIcon.update_signal.connect(riotclient_process.update)
 
     if not engine.rootObjects():
         sys.exit(-1)
