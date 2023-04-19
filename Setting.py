@@ -32,7 +32,8 @@ language_pack = {
             "update": "更新数据",
         },
         'from': "来自极地大乱斗助手",
-        'show': "简体中文"
+        'show': "简体中文",
+        'title': "极地大乱斗助手",
     },
     'en_US': {
         'buff_name': {
@@ -62,7 +63,8 @@ language_pack = {
             "update": "Update Data",
         },
         'from': "From ARAM Helper",
-        'show': "English"
+        'show': "English",
+        'title': "ARAM Helper",
     },
     'zh_TW': {
         'buff_name': {
@@ -92,7 +94,8 @@ language_pack = {
             "update": "更新數據",
         },
         'from': "來自隨機單中助手",
-        'show': "繁體中文"
+        'show': "繁體中文",
+        'title': "隨機單中助手",
     }
 }
 

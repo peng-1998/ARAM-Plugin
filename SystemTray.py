@@ -18,7 +18,7 @@ class SystemTray(QSystemTrayIcon):
         super(SystemTray, self).__init__(parent)
         # 设置托盘图标和提示文字
         self.setIcon(QIcon('images\icon.png'))
-        self.setToolTip(language_pack[setting.language]['from'])
+        self.setToolTip(language_pack[setting.language]['title'])
         # 创建菜单
         self.menu = QMenu()
         # 获取当前语言下的UI文字
@@ -58,6 +58,7 @@ class SystemTray(QSystemTrayIcon):
         self.menu.actions()[3].setText(ui_words["quit"])
         self.menu.actions()[0].setText(ui_words["language"])
         self.menu.actions()[1].setText(ui_words["ui_size"])
+        self.menu.actions()[2].setText(ui_words["update"])
         # 更新语言选项的勾选状态
         for act in self.menu.actions()[0].menu().actions():
             act.setChecked(False)
