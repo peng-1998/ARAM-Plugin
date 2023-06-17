@@ -106,7 +106,6 @@ class RiotClientProcess(QObject):
     def setChatId(self, chatId) -> None:
         if self.chatId != chatId:
             self.chatId = chatId
-            print("chatId:", chatId)
 
     def format_buff_value(value, decimal_places=0) -> str:
         parsed_value = float(value)

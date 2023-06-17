@@ -62,14 +62,8 @@ if __name__ == "__main__":
         # 获取当前游戏用户信息
         summoner = await connection.request('get', '/lol-summoner/v1/current-summoner')
         summoner: dict = await summoner.json()
-        print(summoner)
         # 设置summonerId
         riotclient_process._summonerId: int = summoner['summonerId']
-
-        summoner = await connection.request('get', '/lol-patch/v1/environment')
-        summoner: dict = await summoner.json()
-        print(summoner)
-
         # 获取所有英雄信息
         Champions = await connection.request('get', f'/lol-champions/v1/inventories/{riotclient_process._summonerId}/champions')
         Champions: List = await Champions.json()
